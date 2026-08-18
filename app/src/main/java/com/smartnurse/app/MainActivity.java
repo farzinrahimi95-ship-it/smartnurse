@@ -157,7 +157,7 @@ public class MainActivity extends Activity {
         checkPermissions();
     }
 
-    private void loadMedicationList() {
+    public void loadMedicationList() {
         medicationList = dbHelper.getAllMedications();
         adapter = new MedicationAdapter(this, medicationList);
         lvMedications.setAdapter(adapter);
@@ -230,7 +230,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void cancelAlarm(long medId) {
+    public void cancelAlarm(long medId) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(
@@ -253,6 +253,23 @@ public class MainActivity extends Activity {
         editingId = -1;
         isRecording = false;
         btnRecord.setText("ضبط پیام صوتی");
+    }
+
+    public void editMedication(Medication med) {
+        editingId = med.getId();
+        etName.setText(med.getName());
+        etInstructions.setText(med.getInstructions());
+        etPhone.setText(med.getPhone());
+        tvTime.setText(med.getTime());
+        selectedPhotoPath = med.getPhotoPath();
+        selectedAudioPath = med.getAudioPath();
+
+        if (med.getPhotoPath() != null && !med.getPhotoPath().isEmpty()) {
+            File imgFile = new File(med.getPhotoPath());
+            if (imgFile.exists()) {
+                ivPhoto.setImageURI(Uri.fromFile(imgFile));
+            }
+        }
     }
 
     @Override
