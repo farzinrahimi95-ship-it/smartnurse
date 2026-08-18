@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="پرستار هوشمند"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:paddingBottom="20dp" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="نام دارو"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="دستور مصرف"
+            android:inputType="textMultiLine"
+            android:minLines="2" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="شماره موبایل بیمار یا همراه"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/btnSelectPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="انتخاب عکس دارو" />
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:background="#eeeeee" />
+
+        <Button
+            android:id="@+id/btnPickTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="انتخاب زمان مصرف" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="انتخاب زمان"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/btnRecord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ضبط پیام صوتی" />
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="پخش صدای ضبط‌شده" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ذخیره دارو"
+            android:background="#4CAF50"
+            android:textColor="#ffffff"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="لیست داروها"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+        <ListView
+            android:id="@+id/lvMedications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>
